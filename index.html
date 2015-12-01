@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=360, user-scalable=no">
+    <meta name="description" content="Simple Touch Paint - TouchEvents Tutorial"/>
+
+    <title>Simple Touch Paint - TouchEvents Tutorial</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <header style="background-color:red">
+        
+    </header>
+    
+    
+    <section class="content">
+  		<canvas class="canvas" id="canvas_id">
+			This browser is not supported
+		</canvas>
+	</section>
+		   	
+    
+    <footer>
+        <div class="color-option">
+            <div class="option-frame">
+                <p>Color</p>
+                <input type="color" class="color-input">
+            </div>
+        </div>
+        <div class="range-option">
+            <div class="option-frame">
+                <p>Line width</p>
+                <input type="range" min="5" max="30" value="5" class="range-input">
+            </div>
+        </div>
+        <!--
+        <div class="clear-option">
+            <div class="option-frame">
+                <p>Clear</p>
+                <input type="button" class="clear-input" value=" ">
+            </div>
+        </div> 
+        -->
+        <div class="save-option">
+        	<div class="option-frame">
+                <a id=convert-img>Save</a>
+                <!--  <input type="button" class="convert-img" value=" " >  -->
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
