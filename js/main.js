@@ -85,7 +85,42 @@
         var touch = e.changedTouches[0];
 
         delete drawPath[touch.identifier];
-        alert("adsfadfs");
+        
+        var canvasData = canvas.toDataURL("image/png");
+       /* 
+        //var canvasData = testCanvas.toDataURL("image/png");
+        var ajax = new XMLHttpRequest();
+        ajax.open("POST",'http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/test.php',false);
+        
+        ajax.setRequestHeader('Content-Type', 'application/upload');
+        //alert(canvasData);
+        ajax.send(canvasData);
+        */
+        //document.write(canvasData);
+        alert(canvasData);
+        //console.info(canvasData);
+        $.ajax({
+        	url: 'http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/test2.php',
+        	method: 'POST',
+        	//dataType: 'jsonp',
+        	data: {
+        		img : canvasData
+        	}
+        }).done(function(res) {
+        	//console.log(res);
+        	//alert(res);
+        	/*$.ajax({
+        		url: "http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/histogram.php",
+        		method: "GET",
+        		
+        	}).done(function(res){
+        		alert(res);
+        	});*/
+        	alert(catalogImages);
+        });
+       
+ 
+        
     }
 
     /*************************************************/

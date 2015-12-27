@@ -129,3 +129,44 @@ input[type="button"] {
     border-radius: 15px;
     -webkit-tap-highlight-color: transparent;
 }
+
+/* image similiarity component */
+
+div#controls { 
+	border: 1px solid black; 
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+div#results div.matches img { 
+	width: 112px;
+	height: 112px;
+	border: 1px solid black;
+}
+
+div#threshold {
+	margin-left: 20px;
+	width: 200px;
+	margin-bottom: 20px;
+}
+div#catalog img {
+	width: 400px;
+	height: 400px;
+	display: none;
+}
+
+.clear { clear: both; }
+
+/* real & logindiv */
+/*
+div#real {
+	z-index: 0;
+}
+div#logindiv {
+	background-color: white;
+	z-index: 2;	
+}
+div#logindiv.login_ok {
+	display: none;
+}*/
