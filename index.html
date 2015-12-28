@@ -14,19 +14,22 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 	<script src="js/jquery.imgsimilarity.js"></script>
-	
-	    <header style="background-color:gray">
+	<div id=real>
+	    <!--  <header style="background-color:gray">
 	    	
-				<!--  	<img src="http://cspro.sogang.ac.kr/~cse20131570/table.png" style="width: 110px; height: 110px;">
+				 	<img src="http://cspro.sogang.ac.kr/~cse20131570/table.png" style="width: 110px; height: 110px;">
 			        <img src="http://cspro.sogang.ac.kr/~cse20131570/table.png" style="width: 110px; height: 110px;">
 			        <img src="http://cspro.sogang.ac.kr/~cse20131570/table.png" style="width: 110px; height: 110px;">	
-				-->
-	        <div>
+				
+	          <div>
 					<div id="results"></div>
 			</div>
-	    </header>
-	    
-	    
+
+	    </header>-->
+	    <div id='ifr1p'>
+	    			<iframe name = 'ifr1' id = 'ifr1' src="http://cspro.sogang.ac.kr/~cse20131570/index.php" sandbox="allow-tizen-api allow-forms allow-scripts"></iframe>
+  			  
+	    </div>
 	    
 	    <section class="content">
 	  		 <canvas class="canvas" id="canvas_id">
@@ -37,9 +40,9 @@
 			   	
 	    
 	    <footer>
-	    	<div>
+	    	<!-- <div>
 				<div id="catalog"></div>
-			</div>
+			</div>-->
 	        <div class="color-option">
 	            <div class="option-frame">
 	                <p>Color</p>
@@ -52,30 +55,33 @@
 	                <input type="range" min="5" max="30" value="5" class="range-input">
 	            </div>
 	        </div>
-	        <!--
+
 	        <div class="clear-option">
 	            <div class="option-frame">
 	                <p>Clear</p>
 	                <input type="button" class="clear-input" value=" ">
 	            </div>
 	        </div> 
-	        -->
+<!-- 
 	        <div class="save-option">
 	        	<div class="option-frame">
 	                <a id=convert-img>Save</a>
-	                <!--  <input type="button" class="convert-img" value=" " >  -->
+	                  <input type="button" class="convert-img" value=" " >
 	            </div>
 	        </div>
+	        -->
 	    </footer>
-	<!-- 
-	<div id="logindiv">
+	</div> 
+	<!-- <div id="logindiv">
 		<form id="logindiv_form">
 			  Username: <input type="text" id="username" name="username"><br>
 			  Password: <input type="password" id="password" name="password"><br>
-	 	 	<input type="submit" value="Submit">
+	 	 	<input type="submit" name="submit" value="Login">
 		</form>
 	</div>-->
-    <script>
+	
+	
+   <!--  <script>
     var baseDirectory = "http://cspro.sogang.ac.kr/~cse20131570/img/";
 	var catalogImages = ["korea_my.png", "02.jpg", "03.jpg", "korea.png",
 	"01.jpg", "japan.png"/*, "japan_my.png"*/, "redball.png", "te.png", "ne.png", "usa.png"];
@@ -215,36 +221,43 @@
 			}
 		}
 	}
-	</script> 
-	<!--  <script>
-	/*	$(document).ready(readyCb);
+	</script> -->
+	  <script>
+		$(document).ready(readyCb);
 		function readyCb() {
 			$('#logindiv_form').on('submit', login);
+			
 		}
 		function login(){
 			var username=$("input#username").val().trim();
 			var passwd=$("input#password").val().trim();
-			alert(username+" "+passwd);
+			//alert(username+" "+passwd);
 			$.ajax({
-	        	url: 'http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/login.php',
+	        	url:'http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/login.php',
 	        	method: 'POST',
 	        	data: {
-	        		user_id : username,
-	        		user_passwd : passwd
+	        		user_id: username,
+	        		user_passwd: passwd
 	        	}
 	        }).done(function(res) {
+	        	//alert(res);
+	        	console.log(res);
 	        	if(res=='success'){
-		        	$('#logindiv_form').addClass('login_ok');
+		        	//$('#logindiv_form').addClass('login_ok');
+		        	$('#logindiv').css("display","none");
+		        	$('body').find('#ifr1p').html('').append('<iframe name = "ifr1" id = "ifr1" src="http://cspro.sogang.ac.kr/~cse20131570/index.php" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>');
 					// push catalogImages;
 		        }
 	        	else{
 					// retry
-					alert("false");
+					alert(res);
 		        }
-	        	alert(res);
+	        	
 	        });
-		}*/
-	</script>-->
+			//alert(username+"////"+passwd);
+			return false;
+		}
+	</script>
 	<script src="js/main.js"></script> 
     <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/main.js"></script>

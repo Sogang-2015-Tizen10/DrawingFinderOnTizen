@@ -9,7 +9,7 @@ html, body {
     height: 100%;
 }
 
-header {
+header, iframe {
     position: absolute;
     top: 0;
     width: 100%;
@@ -43,7 +43,7 @@ footer {
 
 .canvas {
     width: 100%;
-    background: #fff;
+    background: #000000;
 }
 
 footer > div {
@@ -64,10 +64,10 @@ footer .range-option {
     right: 33%;
 }
 
-/*footer .clear-option {
+footer .clear-option {
     right: 0;
     width: 33%;
-}*/
+}
 
 footer .save-option {
     right: 0;
@@ -127,11 +127,11 @@ input[type="button"] {
     height: 30px;
     border: 0;
     border-radius: 15px;
+    background: #fff;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* image similiarity component */
-
+/* image similiarity component 
 div#controls { 
 	border: 1px solid black; 
 	margin-bottom: 10px;
@@ -156,17 +156,21 @@ div#catalog img {
 	display: none;
 }
 
-.clear { clear: both; }
+.clear { clear: both; } */
 
 /* real & logindiv */
-/*
-div#real {
+
+/*div#real {
 	z-index: 0;
 }
 div#logindiv {
-	background-color: white;
-	z-index: 2;	
-}
-div#logindiv.login_ok {
+	position: absolute;
+	background-color: #d2ecf5;
+	z-index: 2;
+	width: 200px;
+	height: 150px;	
+	border: 2px solid black;
+}*/
+/*div#logindiv.login_ok {
 	display: none;
 }*/

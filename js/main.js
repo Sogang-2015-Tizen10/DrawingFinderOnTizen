@@ -86,7 +86,7 @@
 
         delete drawPath[touch.identifier];
         
-        var canvasData = canvas.toDataURL("image/png");
+        var canvasData = canvas.toDataURL("image/jpeg");
        /* 
         //var canvasData = testCanvas.toDataURL("image/png");
         var ajax = new XMLHttpRequest();
@@ -97,11 +97,11 @@
         ajax.send(canvasData);
         */
         //document.write(canvasData);
-        alert(canvasData);
+        //alert(canvasData);
         //console.info(canvasData);
         $.ajax({
-        	url: 'http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/test2.php',
-        	method: 'POST',
+        	url: 'http://cspro.sogang.ac.kr/~cse20131570/cgi-bin/drawing_upload.php',
+        	type: 'POST',
         	//dataType: 'jsonp',
         	data: {
         		img : canvasData
@@ -116,7 +116,9 @@
         	}).done(function(res){
         		alert(res);
         	});*/
-        	alert(catalogImages);
+        	//alert(catalogImages);
+        	$('body').find('#ifr1p').html('').append('<iframe name = "ifr1" id = "ifr1" src="http://cspro.sogang.ac.kr/~cse20131570/index.php">');
+        	
         });
        
  
@@ -145,7 +147,7 @@
     function clearCanvas() {
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
-    
+    /*
     function convertToImg() {
     	context.clearRect(0, 0, canvas.width, canvas.height);
     	canvas.toDataURL("image/png");
@@ -156,18 +158,20 @@
     	//context.clearRect(0, 0, canvas.width, canvas.height);
         link.href = canvasId.getElementById(canvasId).toDataURL('image/png');
         link.download = filename;
-    }
+    }*/
 
     function init() {
         var strokeColorSel = document.querySelector('.color-input'),
             strokeWidthSel = document.querySelector('.range-input'),
-            //clearBtn = document.querySelector('.clear-input'),
+            clearBtn = document.querySelector('.clear-input');
         	//img = document.querySelector('.convert-img');
-            img = document.getElementById('convert-img');
+            //img = document.getElementById('convert-img');
 
         content = document.querySelector('.content');
         canvas = document.querySelector('.canvas');
         context = canvas.getContext('2d');
+        //context.fillStyle="#cc0000";
+       // context.fillRect(0,0,1000,1000);
 
         // Canvas size setting
         canvas.width = content.clientWidth;
@@ -181,8 +185,8 @@
         // Apply eventHandler
         strokeColorSel.addEventListener('change', changeStrokeColor, false);
         strokeWidthSel.addEventListener('change', changeStrokeWidth, false);
-        //clearBtn.addEventListener('click', clearCanvas, false);
-        img.addEventListener('click', function() {downloadCanvas(this, 'canvas_id', 'draw.png')}, false);
+        clearBtn.addEventListener('click', clearCanvas, false);
+        //img.addEventListener('click', function() {downloadCanvas(this, 'canvas_id', 'draw.png')}, false);
         //img.addEventListener('click', clearCanvas, false);
         
         // Add eventListener for tizenhwkey
