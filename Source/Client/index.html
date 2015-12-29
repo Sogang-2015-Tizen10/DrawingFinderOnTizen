@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=360, user-scalable=no">
+    <meta name="description" content="Simple Touch Paint - TouchEvents Tutorial"/>
+
+    <title>DrawImageFinder</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div id=real>
+
+	    <div id='ifr1p'>
+	    			<iframe name = 'ifr1' id = 'ifr1' src="http://cspro.sogang.ac.kr/~cse20131570/index.php" sandbox="allow-modals allow-forms allow-scripts allow-same-origin"></iframe>
+  			  
+	    </div>
+	    
+	    <section class="content">
+	  		 <canvas class="canvas" id="canvas_id">
+				This browser is not supported
+			</canvas>
+			
+		</section>
+			   	
+	    
+	    <footer>
+	        <div class="color-option">
+	            <div class="option-frame">
+	                <p>Color</p>
+	                <input type="color" class="color-input">
+	            </div>
+	        </div>
+	        <div class="range-option">
+	            <div class="option-frame">
+	                <p>Line width</p>
+	                <input type="range" min="5" max="30" value="5" class="range-input">
+	            </div>
+	        </div>
+
+	        <div class="clear-option">
+	            <div class="option-frame">
+	                <p>Clear</p>
+	                <input type="button" class="clear-input" value=" ">
+	            </div>
+	        </div> 
+	    </footer>
+	</div> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script> 
+
+</body>
+</html>
