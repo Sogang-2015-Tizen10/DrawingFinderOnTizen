@@ -90,67 +90,29 @@ if (isset($_SESSION['user_images'])) {
 		<script src="./js/jquery.imgsimilarity.js"></script>
 
 		<div id="controls">
-			<!--
-			<div>
-
-
-				<p>Similarity Threshold: 
-				<span id="thresholdvalue">??</span>/<span id="divisor">??</span>.
-				</p>
-
-				<div id="threshold"></div>
-				
-
-			</div>
-			-->
-
 			<div>
 				<div id="results"></div>
 			</div>
 		</div>
 
 		<div>
-			<!--<p>The following images are the base images.</p>-->
 			<div id="catalog"></div>
 		</div>
 
 		<script>
 			var baseDirectory = "";
 			var catalogImages = JSON.parse('<?php echo json_encode($images) ?>');
-			//var catalogImages = ["korea_my.png", "02.jpg", "03.jpg", "korea.png",
-			//"01.jpg", "japan.png"/*, "japan_my.png"*/, "redball.png", "te.png", "ne.png", "usa.png"];
 
 			$(document).ready(function()
 			{
-				/*$("#divisor").text(100);
-				$("#recompute").button().click(function()
-				{
-					recomputeMatches();
-				});*/
-
-				/*var slider = $("#threshold").slider({
-					max: 500,
-					slide: function(event, ui){
-						$("#thresholdvalue").text(ui.value);
-						recomputeMatches();
-					}
-				});*/
-
-				//$("#thresholdvalue").text($("#threshold").slider("value"));
-
-				//$("#thresholdvalue").text(200);
+				
 
 				var catalog = $("#catalog");
 				var results = $("#results");
 
 				$.each(catalogImages, function(index, value) {
-				//Build up images and have them automatically calculate their
-				//similarity information.
-					//console.log(value);
-					
 
 					var image = comparableImage(baseDirectory + value
-						//"http://cspro.sogang.ac.kr/~cse20131570/table.png"
 						, value);
 
 					//if(index>0){
@@ -164,18 +126,7 @@ if (isset($_SESSION['user_images'])) {
 						results.append(matches);
 					}
 				});
-				/*var image = comparableImage(//baseDirectory + value
-					"http://cspro.sogang.ac.kr/~cse20131570/table.png"
-					, "none");
-					catalog.append(image);
-				results.append($("<h3/>").text("'s similar images"));
-				matches = $("<div/>").addClass("matches").attr("id", "match");
-
-				results.append(matches);
-*/
-
-				//results.accordion({ autoHeight: false, clearStyle: true});
-
+				
 			});
 
 			function comparableImage(url, title)
@@ -204,7 +155,6 @@ if (isset($_SESSION['user_images'])) {
 
 			function recomputeMatches()
 			{
-				//var threshold = parseInt($("#thresholdvalue").text())/parseInt($("#divisor").text());
 				var threshold = 5;
 
 				var allData = $("#catalog img").map(function(index, element) {
@@ -216,9 +166,6 @@ if (isset($_SESSION['user_images'])) {
 					//Has loaded histogram information.
 					return typeof (element.data('imgSimilarity')) !== "undefined";
 				});
-
-
-				//console.log(allData);
 
 				//algorithm could be slightly improved by not reexamining pairs.
 				for (var i = 0; i < 1; i++)

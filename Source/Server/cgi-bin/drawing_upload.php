@@ -17,9 +17,6 @@ if (isset($_POST["img"]))
 
 	// Save file. This example uses a hard coded filename for testing,
 	// but a real application can specify filename in POST variable
-		/*$fp = fopen( 'test.png', 'wb' );
-		fwrite( $fp, $unencodedData);
-		fclose( $fp );*/
 	$filename="../img/drawing_.jpg";
 	file_put_contents($filename, $unencodedData);
 	chmod($filename, 0777);
